@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:background="?android:attr/colorButtonNormal"
+    tools:context=".LoginActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="233dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/buttonAttendance"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="69dp"
+            android:text="Trip"
+            android:textColor="@android:color/background_light"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/buttonVan"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_below="@+id/buttonAttendance"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="123dp"
+            android:text="Van"
+            android:textColor="@android:color/background_light"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/buttonVendor"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="173dp"
+            android:text="Vendor"
+            android:textColor="@android:color/background_light"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/buttonUsers"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="Driver"
+            android:textColor="@android:color/background_light"
+            android:visibility="visible" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/buttonFuel"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="225dp"
+        android:text="Fuel"
+        android:textColor="@android:color/background_light"
+        android:visibility="visible" />
+
+</RelativeLayout>

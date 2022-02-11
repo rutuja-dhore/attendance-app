@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">EnterpriseAttendance</string>
+    <string name="title_activity_login">EnterpriseAttendance</string>
+
+    <!-- Strings related to login -->
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="error_invalid_email">This Mobile Number is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_invalid_text">This text is InValid</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_attendance">AttendanceActivity</string>
+    <string name="error_invalid_mobileNumber">This Mobile Number is too short</string>
+    <string name="title_activity_no_view">NoView</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

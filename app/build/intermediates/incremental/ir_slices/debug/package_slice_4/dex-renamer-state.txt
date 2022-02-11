@@ -1,0 +1,4 @@
+#Fri May 11 07:11:56 UTC 2018
+base.0=/home/user/Documents/data/new/EnterpriseAttendance/app/build/intermediates/transforms/dexMerger/debug/64
+path.0=classes.dex
+renamed.0=classes.dex
