@@ -89,6 +89,7 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
                 String mobileNumber = mEditMobileNumber.getText().toString().trim();
                 String password = mEditPassword.getText().toString().trim();
                 String selectedVendor = spinnerVendor.getSelectedItem().toString();
+                String selectedVan = spinnerVan.getSelectedItem().toString();
 
                 boolean validationError = false;
                 if (TextUtils.isEmpty(firstName)) {
@@ -115,10 +116,10 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
                 if (!validationError) {
                     if (userObject == null) {
                         saveUser(userDomain,
-                                firstName, lastName, mobileNumber, password, selectedVendor,Request.Method.POST);
+                                firstName, lastName, mobileNumber, password, selectedVendor,selectedVan,Request.Method.POST);
                     } else {
                         saveUser(userDomain+"?id=" + userObject.getId(),
-                                firstName, lastName, mobileNumber, password,selectedVendor, Request.Method.PUT);
+                                firstName, lastName, mobileNumber, password,selectedVendor, selectedVan,Request.Method.PUT);
                     }
                 }
             }
@@ -205,7 +206,7 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
         }
     }
 
-    private void saveUser(String url, String firstName, String lastName, String mobileNumber, String password, String selectedVendor, int methodType) {
+    private void saveUser(String url, String firstName, String lastName, String mobileNumber, String password, String selectedVendor, String selectedVan,int methodType) {
 
         try {
             JSONObject postparams = new JSONObject();
@@ -213,7 +214,7 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
             postparams.put("lastName", lastName);
             postparams.put("mobileNumber", mobileNumber);
             postparams.put("password", password);
-
+            postparams.put("vanNumber", selectedVan);
             JSONArray vendors = new JSONArray();
             vendors.put(selectedVendor);
             postparams.put("vendors", vendors);

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
 MERGED from [com.android.volley:volley:1.2.0] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/ef96d250633e71f10447133174b0a873/jetified-volley-1.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.2.2] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/4c273b6762a94d91e0ad8b42c2b7e22d/navigation-fragment-ktx-2.2.2/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/b2d1ced8cdc80f2d87ab63b5af9585a0/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:17:1-24:12
@@ -47,20 +47,20 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/rutuja.dhore/.gr
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/aad614d97ae7fbea1f0f8cb617937cc2/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/017381863dadf66ec95ff602a8f79c4c/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/08bd8de163e4dce53d513b3cb9b25234/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
+INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
 	package
 		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:3:5-61
 		INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
 		INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-64:12
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:1-72:12
 		INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:2:11-69
@@ -88,8 +88,24 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:10:5-80
 	android:name
 		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:10:22-77
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:12:22-73
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:15:5-80
+	android:name
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:15:22-77
+uses-permission#android.permission.WRITE_INTERNAL_STORAGE
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:17:5-81
+	android:name
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:17:22-78
+uses-permission#android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:18:5-88
+	android:name
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:18:22-85
 application
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:12:5-62:19
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:20:5-70:19
 MERGED from [com.google.android.material:material:1.1.0] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/5d36c944afc7525553082ec1c0775cf4/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/5d36c944afc7525553082ec1c0775cf4/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/fcb11f5e26f0e2154d3fee9403037621/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
@@ -101,101 +117,101 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/rutu
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.2.0] /Users/rutuja.dhore/.gradle/caches/transforms-2/files-2.1/ae1c2b667e56fe1160907ff4132ae6da/core-1.2.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:17:9-35
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:25:9-35
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:15:9-41
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:23:9-41
 	android:roundIcon
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:16:9-54
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:24:9-54
 	android:icon
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:14:9-43
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:22:9-43
 	android:allowBackup
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:21:9-35
 	android:theme
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:18:9-40
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:26:9-40
 	android:usesCleartextTraffic
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:19:9-44
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:27:9-44
 activity#attendance.enterprise.com.enterpriseattendance.LoginActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:20:9-28:20
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:28:9-36:20
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:22:13-39
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:30:13-39
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:21:13-42
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:29:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:32:17-69
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:34:27-74
 activity#attendance.enterprise.com.enterpriseattendance.UserActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:29:9-31:39
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:37:9-39:39
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:31:13-36
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:39:13-36
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:30:13-41
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:38:13-41
 activity#attendance.enterprise.com.enterpriseattendance.VanActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:32:9-34:36
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:40:9-42:36
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:34:13-33
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:42:13-33
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:33:13-40
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:41:13-40
 activity#attendance.enterprise.com.enterpriseattendance.AddVanActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:35:9-37:39
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:43:9-45:39
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:37:13-36
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:45:13-36
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:36:13-43
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:44:13-43
 activity#attendance.enterprise.com.enterpriseattendance.AddShiftActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:38:9-40:42
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:46:9-48:42
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:40:13-39
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:48:13-39
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:39:13-45
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:47:13-45
 activity#attendance.enterprise.com.enterpriseattendance.AddUserActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:41:9-43:42
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:49:9-51:42
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:43:13-39
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:51:13-39
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:42:13-44
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:50:13-44
 activity#attendance.enterprise.com.enterpriseattendance.ShiftActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:44:9-46:39
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:52:9-54:39
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:46:13-36
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:54:13-36
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:45:13-42
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:53:13-42
 activity#attendance.enterprise.com.enterpriseattendance.DashboardActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:47:9-49:41
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:55:9-57:41
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:49:13-38
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:57:13-38
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:48:13-46
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:56:13-46
 activity#attendance.enterprise.com.enterpriseattendance.AttendanceActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:50:9-52:41
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:58:9-60:41
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:52:13-38
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:60:13-38
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:51:13-47
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:59:13-47
 activity#attendance.enterprise.com.enterpriseattendance.AddAttendance
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:53:9-55:40
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:61:9-63:40
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:55:13-37
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:63:13-37
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:54:13-42
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:62:13-42
 activity#attendance.enterprise.com.enterpriseattendance.AddFuelActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:56:9-58:40
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:64:9-66:40
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:58:13-37
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:66:13-37
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:57:13-44
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:65:13-44
 activity#attendance.enterprise.com.enterpriseattendance.FuelActivity
-ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:59:9-61:36
+ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:67:9-69:36
 	android:label
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:61:13-33
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:69:13-33
 	android:name
-		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:60:13-41
+		ADDED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:68:13-41
 uses-sdk
 INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml

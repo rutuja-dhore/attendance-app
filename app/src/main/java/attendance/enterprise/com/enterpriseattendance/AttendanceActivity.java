@@ -280,27 +280,6 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
         return true;
     }
 
-    public void downloadFile() {
-        File dir = new File("/sdcard/Download/");
-
-        File file2 = new File(dir + "/test.pdf");
-
-        String DownloadUrl = audio1;
-        DownloadManager.Request request1 = new DownloadManager.Request(file2);
-        request1.setDescription("Sample Music File");   //appears the same in Notification bar while downloading
-        request1.setTitle("File1.mp3");
-        request1.setVisibleInDownloadsUi(false);
-
-
-        request1.setDestinationInExternalFilesDir(getApplicationContext(), "/File", "Question1.mp3");
-
-        DownloadManager manager1 = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-        Objects.requireNonNull(manager1).enqueue(request1);
-        if (DownloadManager.STATUS_SUCCESSFUL == 8) {
-            Toast.makeText(getApplicationContext(), "Downloaded", Toast.LENGTH_SHORT).show();
-
-        }
-    }
 
     @Override
     public void onClick(View v) {
