@@ -38,11 +38,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class AddFuelActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+public class AddFuelActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    Spinner spinnerVan;
-    EditText txtDate, txtAmount, txtType;
+    EditText txtDate, txtAmount, txtType,txtVan;
     private int mYear, mMonth, mDay, mHour, mMinute, mSec;
     String selectedVan;
     final String vanDomain = "http://34.93.190.224:8080/admin/vans";
@@ -65,15 +64,10 @@ public class AddFuelActivity extends AppCompatActivity implements AdapterView.On
 
         setContentView(R.layout.activity_add_fuel);
 
-        spinnerVan = (Spinner) findViewById(R.id.spinnerVan);
-        List<String> vans = new ArrayList<String>();
-        loadVans(vans, vanDomain, "number");
-        spinnerVan.setOnItemSelectedListener(this);
-
         txtDate = (EditText) findViewById(R.id.in_date);
         txtAmount = (EditText) findViewById(R.id.editTextAmount);
         txtType = (EditText) findViewById(R.id.editTextType);
-
+        txtVan = (EditText) findViewById(R.id.editTextVan);
         txtDate.setOnClickListener(this);
         cardAdd = findViewById(R.id.cardAdd);
         cardDetails = findViewById(R.id.cardDetails);
@@ -108,7 +102,7 @@ public class AddFuelActivity extends AppCompatActivity implements AdapterView.On
             cardAdd.setVisibility(View.VISIBLE);
             cardDetails.setVisibility(View.INVISIBLE);
             txtDate.setText(formatter.format(new Date()));
-
+            txtVan.setText(userObject.getVanNumber());
         }
     }
 
@@ -142,14 +136,6 @@ public class AddFuelActivity extends AppCompatActivity implements AdapterView.On
             return false;
         }
 
-        if (spinnerVan.getSelectedItem() == "Select Van") {
-            TextView errorText = (TextView) spinnerVan.getSelectedView();
-            errorText.setError("");
-            errorText.setTextColor(Color.RED);//just to highlight that this is an error
-            errorText.setText("Select Van");//changes the selected item text to this
-            spinnerVan.requestFocus();
-            return false;
-        }
         return true;
     }
 
@@ -222,7 +208,7 @@ public class AddFuelActivity extends AppCompatActivity implements AdapterView.On
                 try {
                     postparams.put("type", txtType.getText());
                     postparams.put("amount", txtAmount.getText());
-                    postparams.put("vanNumber", spinnerVan.getSelectedItem().toString());
+                    postparams.put("vanNumber", txtVan.getText());
                     postparams.put("logDate", txtDate.getText());
 
                 } catch (JSONException e) {
@@ -233,56 +219,5 @@ public class AddFuelActivity extends AppCompatActivity implements AdapterView.On
                 }
             }
         }
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if (spinnerVan.getSelectedItem() != "Select Van") {
-            String item = parent.getItemAtPosition(position).toString();
-
-        }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
-
-    public void addItemsOnSpinnerVan(final List<String> vans) {
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
-        dataAdapter.add("Select Van");
-        dataAdapter.addAll(vans);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerVan.setAdapter(dataAdapter);
-    }
-
-
-    private void loadVans(final List<String> vans, String JSON_URL, final String paramName) {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, JSON_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray heroArray = new JSONArray(response);
-                            if (heroArray.length() > 0) {
-                                for (int i = 0; i < heroArray.length(); i++) {
-                                    JSONObject heroObject = heroArray.getJSONObject(i);
-                                    vans.add(heroObject.getString(paramName));
-                                }
-                                addItemsOnSpinnerVan(vans);
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-        MySingleTon.getInstance(AddFuelActivity.this).addToRequestQue(stringRequest);
-
     }
 }

@@ -56,13 +56,14 @@
                         android:hint="Select Date" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <Spinner
-                    android:id="@+id/spinnerVan"
+                <EditText
+                    android:id="@+id/editTextVan"
                     android:layout_width="match_parent"
-                    android:layout_height="53dp"
-                    android:layout_weight="1"
-
-                    android:spinnerMode="dialog" />
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="Van"
+                    android:imeActionId="6"
+                    android:singleLine="true" />
 
                 <com.google.android.material.textfield.TextInputLayout
 
