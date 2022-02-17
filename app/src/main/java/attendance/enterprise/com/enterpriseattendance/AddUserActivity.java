@@ -137,8 +137,7 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
             mEditLastName1.setText(userObject.getLastName());
             mEditMobileNumber1.setText(userObject.getMobileNumber());
             mEditPassword1.setText(userObject.getPassword());
-            mEditVan.setText(userObject.getVanNumber());
-            editTextVendor.setText(userObject.getVendor());
+
 
             //            ArrayAdapter<String> array_spinner=(ArrayAdapter<String>)spinnerVan.getAdapter();
 //            spinnerVan.setSelection(array_spinner.getPosition(attendanceObject.getVan().getNumber()));
@@ -150,7 +149,10 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
         } else {
             cardAdd.setVisibility(View.VISIBLE);
             cardDetails.setVisibility(View.INVISIBLE);
+
         }
+        mEditVan.setText(userObject.getVanNumber());
+        editTextVendor.setText(userObject.getVendor());
     }
 
 

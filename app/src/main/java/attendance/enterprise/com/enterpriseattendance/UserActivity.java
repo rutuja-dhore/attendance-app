@@ -115,7 +115,7 @@ public class UserActivity extends AppCompatActivity {
                                     String vendor = null;
                                     if (heroObject.has("vendors") &&  !heroObject.isNull("vendors")) {
                                         JSONArray vendorsArray = heroObject.getJSONArray("vendors");
-                                        for (int t = 0; t <1; t++) {
+                                        for (int t = 0; t <vendorsArray.length(); t++) {
                                             JSONObject vendorObject = vendorsArray.getJSONObject(t);
                                             vendor = vendorObject .getString("name");
                                         }
