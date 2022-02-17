@@ -77,7 +77,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Amount"
                         android:imeActionId="6"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:maxLines="1"
                         android:singleLine="true" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -91,7 +91,7 @@
                         android:id="@+id/editTextType"
                         android:layout_width="match_parent"
                         android:layout_height="63dp"
-                        android:hint="Enter Type"
+                        android:hint="Enter CNG/Petrol/Disel"
                         android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -175,7 +175,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
-                        android:hint="Type"
+                        android:hint="CNG/Petrol/Disel"
                         android:imeActionId="6"
                         android:inputType="number"
                         android:maxLines="1"

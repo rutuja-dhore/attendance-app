@@ -1550,7 +1550,6 @@ id editTextAmount
 id editTextAmount1
 id editTextComment
 id editTextComment1
-id editTextDisel1
 id editTextEndKm
 id editTextEndKm1
 id editTextFirstName
@@ -1564,6 +1563,7 @@ id editTextPassowrd1
 id editTextPassword
 id editTextStartKm
 id editTextStartKm1
+id editTextTotalKm1
 id editTextType
 id editTextType1
 id editTextVan
@@ -1777,7 +1777,6 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id updateDisel
 id updateEndKm
 id update_form
 id useLogo

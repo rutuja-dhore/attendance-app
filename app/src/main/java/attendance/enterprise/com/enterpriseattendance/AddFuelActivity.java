@@ -2,20 +2,15 @@ package attendance.enterprise.com.enterpriseattendance;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -26,17 +21,13 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class AddFuelActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -108,12 +99,7 @@ public class AddFuelActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        if (fuelObject != null) {
-            menu.findItem(R.id.itemEdit).setVisible(true);
-            if (userObject != null && userObject.getRole().contains("ROLE_ADMIN")) {
-                menu.findItem(R.id.itemDelete).setVisible(true);
-            }
-        }
+
         return true;
     }
 
@@ -130,13 +116,22 @@ public class AddFuelActivity extends AppCompatActivity implements View.OnClickLi
 
     private boolean inputValidated() {
 
-        if (TextUtils.isEmpty(txtDate.getText())) {
-            txtDate.setError(getString(R.string.error_field_required));
-            txtDate.requestFocus();
-            return false;
-        }
+        if (fieldRequired(txtDate)) return false;
+
+        if (fieldRequired(txtAmount)) return false;
+
+        if (fieldRequired(txtType)) return false;
 
         return true;
+    }
+
+    private boolean fieldRequired(EditText txt) {
+        if (TextUtils.isEmpty(txt.getText())) {
+            txt.setError(getString(R.string.error_field_required));
+            txt.requestFocus();
+            return true;
+        }
+        return false;
     }
 
     private void saveVan(JSONObject postparams, final User userObject, String url, int methodType) {

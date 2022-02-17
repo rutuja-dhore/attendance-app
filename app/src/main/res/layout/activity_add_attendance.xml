@@ -53,22 +53,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/updateDisel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Disel"
-                android:imeActionId="6"
-                android:inputType="number|numberDecimal"
-                android:maxLines="1"
-                android:singleLine="true" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
             android:id="@+id/buttonUpdate"
             style="?android:textAppearanceSmall"
@@ -332,7 +316,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:id="@+id/editTextDisel1"
+                        android:id="@+id/editTextTotalKm1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"

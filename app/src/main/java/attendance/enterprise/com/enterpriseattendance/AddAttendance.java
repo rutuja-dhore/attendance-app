@@ -2,20 +2,15 @@ package attendance.enterprise.com.enterpriseattendance;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -26,17 +21,12 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class AddAttendance extends AppCompatActivity implements View.OnClickListener {
 
@@ -51,7 +41,7 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
     Attendance attendanceObject;
 
     Button buttonSave, buttonUpdate;
-    EditText txtFirstName1, txtDate1, txtStartKm1, txtEndKm1, txtDisel1, txtComment1, txtVan1, txtVendor1;
+    EditText txtFirstName1, txtDate1, txtStartKm1, txtEndKm1, txtTotalKm1, txtComment1, txtVan1, txtVendor1;
     User userObject = null;
 
 
@@ -87,7 +77,7 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
         txtStartKm1 = (EditText) findViewById(R.id.editTextStartKm1);
         txtEndKm1 = (EditText) findViewById(R.id.editTextEndKm1);
 
-        txtDisel1 = (EditText) findViewById(R.id.editTextDisel1);
+        txtTotalKm1 = (EditText) findViewById(R.id.editTextTotalKm1);
         txtFirstName1 = (EditText) findViewById(R.id.editTextFirstName1);
         txtComment1 = (EditText) findViewById(R.id.editTextComment1);
         txtVan1 = (EditText) findViewById(R.id.editTextVan1);
@@ -104,7 +94,7 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
             txtDate1.setText(Helper.formatter.format(attendanceObject.getDate()));
             txtStartKm1.setText(String.valueOf(attendanceObject.getStartKm()));
             txtEndKm1.setText(String.valueOf(attendanceObject.getEndKm()));
-            txtDisel1.setText(String.valueOf(attendanceObject.getDisel()));
+            txtTotalKm1.setText(String.valueOf(attendanceObject.getTotalKm()));
             txtVan1.setText(attendanceObject.getVan().getNumber());
             txtVendor1.setText(attendanceObject.getVendor().getName());
             txtComment1.setText(attendanceObject.getComment());
@@ -129,12 +119,6 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        if (attendanceObject != null) {
-            menu.findItem(R.id.itemEdit).setVisible(true);
-            if (userObject != null && userObject.getRole().contains("ROLE_ADMIN")) {
-                menu.findItem(R.id.itemDelete).setVisible(true);
-            }
-        }
         return true;
     }
 
@@ -148,22 +132,12 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itemEdit:
-                ActionBar actionBar = getSupportActionBar(); // or getActionBar();
-                getSupportActionBar().setTitle("Edit Trip"); // set the top title
-                cardAdd.setVisibility(View.INVISIBLE);
-                cardDetails.setVisibility(View.INVISIBLE);
-                updateEndKm.setText(txtEndKm1.getText());
-                cardEdit.setVisibility(View.VISIBLE);
-
                 item.setVisible(false);
                 return true;
 
-//            case R.id.itemDelete:
-//                Toast.makeText(getApplicationContext(), "delete Menu", Toast.LENGTH_SHORT).show();
-//                item.setVisible(false);
-//                Van vanObject = (Van) getIntent().getSerializableExtra("van");
-//                deleteVan(vanObject.getId());
-//                return true;
+           case R.id.itemDelete:
+                item.setVisible(false);
+                return true;
 
             default:
                 // If we got here, the user's action was not recognized.
@@ -180,6 +154,19 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
             txtDate.requestFocus();
             return false;
         }
+
+        if (TextUtils.isEmpty(txtStartKm.getText())) {
+            txtStartKm.setError(getString(R.string.error_field_required));
+            txtStartKm.requestFocus();
+            return false;
+        }
+
+        if (TextUtils.isEmpty(txtEndKm.getText())) {
+            txtEndKm.setError(getString(R.string.error_field_required));
+            txtEndKm.requestFocus();
+            return false;
+        }
+
 
         if (!TextUtils.isEmpty(txtEndKm.getText()) && !TextUtils.isEmpty(txtStartKm.getText())) {
             if (Double.parseDouble(txtStartKm.getText().toString()) >= Double.parseDouble(txtEndKm.getText().toString())) {

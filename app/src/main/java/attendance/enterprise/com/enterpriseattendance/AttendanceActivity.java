@@ -64,6 +64,8 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
 
     private static final String attendanceDomain = "http://34.93.190.224:8080/trips";
 
+    private static final String exportDomain = "http://34.93.190.224:8080/trips/downloadTemplate";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,91 +158,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
             public void onClick(View arg0) {
                 progressBar.setVisibility(View.VISIBLE);
 
-           /*     ActivityCompat.requestPermissions(AttendanceActivity.this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        PERMISSION_GRANTED);
-                ActivityCompat.requestPermissions(AttendanceActivity.this,
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                        PERMISSION_GRANTED);
-*/
-                SimpleDateFormat formatterFile = new SimpleDateFormat("yyyy-MM-dd'T'hh-mm-ss");
-
-                String Fnamexls = "attendance_log_" + formatterFile.format(new Date()) + ".xls";
-
-//                String appPath2 = getApplicationContext().getFilesDir().getAbsolutePath();
-//                String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-//                String baseDir = "/data/data/attendance.enterprise.com.enterpriseattendance";
-
-//                String appPath1 = Environment.getExternalStorageDirectory().getPath();
-//                String appPath2 = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getPath();
-
-//                String appPath2 = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
-
-
-                File dir = new File("/sdcard/Download/");
-
-//                File file = new File(dir, fileName);
-
-                File file2 = new File(dir + "/" + Fnamexls);
-             /*   WorkbookSettings wbSettings = new WorkbookSettings();
-                wbSettings.setLocale(new Locale("en", "EN"));
-
-                WritableWorkbook workbook;
-                try {
-                    int a = 1;
-                    workbook = Workbook.createWorkbook(file2, wbSettings);
-
-                    WritableSheet sheet = workbook.createSheet("First Sheet", 0);
-
-                    try {
-                        sheet.addCell(new Label(0, 0, "FIRSTNAME"));
-                        sheet.addCell(new Label(1, 0, "LOG_DATE"));
-                        sheet.addCell(new Label(2, 0, "SHIFT"));
-                        sheet.addCell(new Label(3, 0, "TABLE_NO"));
-                        sheet.addCell(new Label(4, 0, "VAN"));
-                        sheet.addCell(new Label(5, 0, "START_KM"));
-                        sheet.addCell(new Label(6, 0, "END_KM"));
-                        sheet.addCell(new Label(7, 0, "TOTAL_KM"));
-                        sheet.addCell(new Label(8, 0, "DISEL"));
-
-                        int index = 1;
-                        for (Attendance temp : herolist) {
-                            sheet.addCell(new Label(0, index, temp.getFirstName()));
-                            sheet.addCell(new Label(1, index, temp.getDate().toString()));
-                            sheet.addCell(new Label(2, index, temp.getShift().getName()));
-                            sheet.addCell(new Label(3, index, temp.getTableNo()));
-                            sheet.addCell(new Label(4, index, temp.getVan().getNumber()));
-                            sheet.addCell(new Label(5, index, String.valueOf(temp.getStartKm())));
-                            sheet.addCell(new Label(6, index, String.valueOf(temp.getEndKm())));
-                            sheet.addCell(new Label(7, index, String.valueOf(temp.getTotalKm())));
-                            sheet.addCell(new Label(8, index, String.valueOf(temp.getDisel())));
-
-                            index = index + 1;
-                        }
-
-                        DownloadManager downloadManager = (DownloadManager) getApplicationContext().getSystemService(DOWNLOAD_SERVICE);
-
-                        downloadManager.addCompletedDownload(file2.getName(), file2.getName(), true, "text/plain", file2.getAbsolutePath(), file2.length(), true);
-//                        addNotification(file2.getAbsolutePath());
-                        progressBar.setVisibility(View.INVISIBLE);
-
-                    } catch (RowsExceededException e) {
-                        e.printStackTrace();
-                    } catch (WriteException e) {
-                        e.printStackTrace();
-                    }
-                    workbook.write();
-
-                    try {
-                        workbook.close();
-                    } catch (WriteException e) {
-                        Toast.makeText(getApplicationContext(), "Error " + e.getMessage(), Toast.LENGTH_LONG).show();
-                        e.printStackTrace();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }*/
+   export(exportDomain);
             }
         });
 
@@ -307,7 +225,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                                 day = "0" + day;
                             }
 
-                            fromDate.setText(year + "-" + month + "-" + day);
+                            fromDate.setText( day + "-" + month+ "-" + year);
                         }
                     }, mYear, mMonth, mDay);
             datePickerDialog.show();
@@ -335,7 +253,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
                                 day = "0" + day;
                             }
 
-                            toDate.setText(year + "-" + month + "-" + day);
+                            toDate.setText(day + "-" + month+ "-" + year);
                         }
                     }, mYear, mMonth, mDay);
             datePickerDialog.show();
@@ -429,5 +347,43 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
 
     }
 
+
+    private void export(String url) {
+
+        herolist = new ArrayList<>();
+
+        //getting the progressbar
+
+        //making the progressbar visible
+        progressBar.setVisibility(View.VISIBLE);
+
+        //creating a string request to send request to the url
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //hiding the progressbar after completion
+                        progressBar.setVisibility(View.INVISIBLE);
+
+                       try  {
+                           Toast.makeText(getApplicationContext(), "Downloaded", Toast.LENGTH_SHORT).show();
+
+
+                       } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //displaying the error in toast if occurrs
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        MySingleTon.getInstance(AttendanceActivity.this).addToRequestQue(stringRequest);
+
+    }
 
 }

@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -95,25 +96,48 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
                 boolean validationError = false;
                 if (TextUtils.isEmpty(firstName)) {
                     mEditFirstName.setError(getString(R.string.error_field_required));
+                    mEditFirstName.requestFocus();
                     validationError = true;
                 }
                 if (TextUtils.isEmpty(lastName)) {
                     mEditLastName.setError(getString(R.string.error_field_required));
+                    mEditLastName.requestFocus();
                     validationError = true;
                 }
                 if (TextUtils.isEmpty(mobileNumber)) {
                     mEditMobileNumber.setError(getString(R.string.error_field_required));
+                    mEditMobileNumber.requestFocus();
                     validationError = true;
                 } else if (mobileNumber.length() != 10) {
                     mEditMobileNumber.setError(getString(R.string.error_invalid_mobileNumber));
+                    mEditMobileNumber.requestFocus();
                     validationError = true;
                 }
 
                 if (TextUtils.isEmpty(password)) {
                     mEditPassword.setError(getString(R.string.error_field_required));
                     validationError = true;
+                    mEditPassword.requestFocus();
                 }
 
+                if (spinnerVan.getSelectedItemPosition() < 0) {
+// get selected item value
+                    String itemvalue = String.valueOf(spinnerVan.getSelectedItem());
+                } else {
+// set error message on spinner
+                    TextView errorTextview = (TextView) spinnerVan.getSelectedView();
+                    errorTextview.setError(getString(R.string.error_field_required));
+                }
+
+
+                if (spinnerVendor.getSelectedItemPosition() < 0) {
+// get selected item value
+                    String itemvalue = String.valueOf(spinnerVendor.getSelectedItem());
+                } else {
+// set error message on spinner
+                    TextView errorTextview = (TextView) spinnerVendor.getSelectedView();
+                    errorTextview.setError(getString(R.string.error_field_required));
+                }
                 if (!validationError) {
                     if (userObject == null) {
                         saveUser(userDomain,
@@ -138,9 +162,8 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
             mEditMobileNumber1.setText(userObject.getMobileNumber());
             mEditPassword1.setText(userObject.getPassword());
 
-
-            //            ArrayAdapter<String> array_spinner=(ArrayAdapter<String>)spinnerVan.getAdapter();
-//            spinnerVan.setSelection(array_spinner.getPosition(attendanceObject.getVan().getNumber()));
+            mEditVan.setText(userObject.getVanNumber());
+            editTextVendor.setText(userObject.getVendor());
 
 
             ActionBar actionBar = getSupportActionBar(); // or getActionBar();
@@ -151,8 +174,7 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
             cardDetails.setVisibility(View.INVISIBLE);
 
         }
-        mEditVan.setText(userObject.getVanNumber());
-        editTextVendor.setText(userObject.getVendor());
+
     }
 
 
@@ -340,6 +362,9 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
         dataAdapter.addAll(vans);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerVendor.setAdapter(dataAdapter);
+        if (userObject != null) {
+        spinnerVendor.setSelection(dataAdapter.getPosition(userObject.getVendor()));
+        }
     }
 
     public void addItemsOnSpinnerVan(final List<String> vans) {
@@ -348,6 +373,9 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
         dataAdapter.addAll(vans);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerVan.setAdapter(dataAdapter);
+            if (userObject != null) {
+        spinnerVan.setSelection(dataAdapter.getPosition(userObject.getVanNumber()));
+            }
     }
 
     @Override

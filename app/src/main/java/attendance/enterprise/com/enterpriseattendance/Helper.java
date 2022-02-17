@@ -8,7 +8,7 @@ import java.util.HashSet;
 
 public class Helper {
 
-    public static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+    public static SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
     public static Date getFirstDateOfMonth(Date date){
         Calendar cal = Calendar.getInstance();
@@ -27,5 +27,6 @@ public class Helper {
                 sp.getString("vanNumber", ""),
                 sp.getString("vendor", ""));
     }
+
 
 }
