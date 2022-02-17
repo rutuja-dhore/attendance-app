@@ -140,12 +140,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     public void goToMainActivity() {
         Intent i = new Intent(this, DashboardActivity.class);
-       User userObject = new User(sp.getLong("id", 0),
-                sp.getString("firstName", ""),
-                sp.getString("lastName", ""),
-                sp.getString("password", ""),
-                sp.getString("mobileNumber", ""),
-                sp.getStringSet("roles", new HashSet<String>()),   sp.getString("vanNumber", ""));
+       User userObject = Helper.getUserObject(sp);
         i.putExtra("user", userObject);
         startActivity(i);
     }
@@ -390,8 +385,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                             vanNumber = vanObject.getString("number");
                                         }
 
+                                        Set<String> vendors = new HashSet<>();
+                                        String vendor = null;
+                                        if (heroObject.has("vendors") &&  !heroObject.isNull("vendors")) {
+                                            JSONArray vendorsArray = heroObject.getJSONArray("vendors");
+                                            for (int t = 0; t <1; t++) {
+                                                JSONObject vendorObject = vendorsArray.getJSONObject(t);
+                                                vendor = vendorObject .getString("name");
+                                            }
+                                        }
                                         User user = new User(heroObject.getLong("id"), heroObject.getString("firstName"), heroObject.getString("lastName"),
-                                                heroObject.getString("password"), heroObject.getString("mobileNumber"), roles, vanNumber);
+                                                heroObject.getString("password"), heroObject.getString("mobileNumber"), roles, vanNumber,vendor);
 
                                         Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
                                         intent.putExtra("user", user);
@@ -403,6 +407,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                         sp.edit().putString("password", user.getPassword()).apply();
                                         sp.edit().putStringSet("roles" , roles).apply();
                                         sp.edit().putString("vanNumber" , user.getVanNumber()).apply();
+                                        sp.edit().putString("vendor" , vendor).apply();
 
                                         startActivity(intent);
                                         finish();

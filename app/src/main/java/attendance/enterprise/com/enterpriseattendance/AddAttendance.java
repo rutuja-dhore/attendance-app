@@ -38,11 +38,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class AddAttendance extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
+public class AddAttendance extends AppCompatActivity implements View.OnClickListener {
 
 
-    Spinner spinnerVan, spinnerVendor;
-    EditText txtDate, txtStartKm, txtEndKm,txtComment, updateEndKm;
+    EditText txtDate, txtStartKm, txtEndKm,txtComment, updateEndKm, txtVan, txtVendor;
     private int mYear, mMonth, mDay, mHour, mMinute, mSec;
     String selectedVan, selectedShift;
     final String vanDomain = "http://34.93.190.224:8080/admin/vans";
@@ -52,10 +51,10 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
     Attendance attendanceObject;
 
     Button buttonSave, buttonUpdate;
-    EditText txtFirstName1, txtDate1, txtStartKm1, txtEndKm1, txtDisel1, txtComment1, txtVan1, txtShift1;
+    EditText txtFirstName1, txtDate1, txtStartKm1, txtEndKm1, txtDisel1, txtComment1, txtVan1, txtVendor1;
     User userObject = null;
 
-    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,21 +64,13 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
         attendanceObject = (Attendance) getIntent().getSerializableExtra("attendance");
 
         setContentView(R.layout.activity_add_attendance);
-        spinnerVan = (Spinner) findViewById(R.id.spinnerVan);
-        spinnerVendor = (Spinner) findViewById(R.id.spinnerShift);
-
-        List<String> vans = new ArrayList<String>();
-        loadVans(vans, vanDomain, "number");
-        spinnerVan.setOnItemSelectedListener(this);
-
-        List<String> shifts = new ArrayList<String>();
-        loadVendors(shifts, vendorDomain, "name");
-        spinnerVendor.setOnItemSelectedListener(this);
 
         txtDate = (EditText) findViewById(R.id.in_date);
         txtStartKm = (EditText) findViewById(R.id.editTextStartKm);
         txtEndKm = (EditText) findViewById(R.id.editTextEndKm);
         txtComment = (EditText) findViewById(R.id.editTextComment);
+        txtVan = (EditText) findViewById(R.id.editTextVan);
+        txtVendor = (EditText) findViewById(R.id.editTextVendor);
 
         txtDate.setOnClickListener(this);
         cardAdd = findViewById(R.id.cardAdd);
@@ -99,8 +90,8 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
         txtDisel1 = (EditText) findViewById(R.id.editTextDisel1);
         txtFirstName1 = (EditText) findViewById(R.id.editTextFirstName1);
         txtComment1 = (EditText) findViewById(R.id.editTextComment1);
-        txtVan1 = (EditText) findViewById(R.id.spinnerVan1);
-        txtShift1 = (EditText) findViewById(R.id.spinnerShift1);
+        txtVan1 = (EditText) findViewById(R.id.editTextVan1);
+        txtVendor1 = (EditText) findViewById(R.id.editTextVendor1);
 
         buttonSave.setOnClickListener(this);
         buttonUpdate.setOnClickListener(this);
@@ -109,23 +100,19 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
             cardAdd.setVisibility(View.INVISIBLE);
             cardDetails.setVisibility(View.VISIBLE);
             cardEdit.setVisibility(View.INVISIBLE);
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
-            txtDate1.setText(formatter.format(attendanceObject.getDate()));
+            txtDate1.setText(Helper.formatter.format(attendanceObject.getDate()));
             txtStartKm1.setText(String.valueOf(attendanceObject.getStartKm()));
             txtEndKm1.setText(String.valueOf(attendanceObject.getEndKm()));
             txtDisel1.setText(String.valueOf(attendanceObject.getDisel()));
             txtVan1.setText(attendanceObject.getVan().getNumber());
-            txtShift1.setText(attendanceObject.getVendor().getName());
+            txtVendor1.setText(attendanceObject.getVendor().getName());
             txtComment1.setText(attendanceObject.getComment());
             txtFirstName1.setText(attendanceObject.getFirstName());
 
-            txtDate.setText(formatter.format(attendanceObject.getDate()));
+            txtDate.setText(Helper.formatter.format(attendanceObject.getDate()));
             txtStartKm.setText(String.valueOf(attendanceObject.getStartKm()));
             txtEndKm.setText(String.valueOf(attendanceObject.getEndKm()));
-
-//            ArrayAdapter<String> array_spinner=(ArrayAdapter<String>)spinnerVan.getAdapter();
-//            spinnerVan.setSelection(array_spinner.getPosition(attendanceObject.getVan().getNumber()));
 
 
             ActionBar actionBar = getSupportActionBar(); // or getActionBar();
@@ -134,8 +121,9 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
             cardAdd.setVisibility(View.VISIBLE);
             cardDetails.setVisibility(View.INVISIBLE);
             cardEdit.setVisibility(View.INVISIBLE);
-            txtDate.setText(formatter.format(new Date()));
-
+            txtDate.setText(Helper.formatter.format(new Date()));
+            txtVendor.setText(userObject.getVendor());
+            txtVan.setText(userObject.getVanNumber());
         }
     }
 
@@ -190,24 +178,6 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
         if (TextUtils.isEmpty(txtDate.getText())) {
             txtDate.setError(getString(R.string.error_field_required));
             txtDate.requestFocus();
-            return false;
-        }
-        if (spinnerVendor.getSelectedItem() == "Select Vendor") {
-            TextView errorText = (TextView) spinnerVendor.getSelectedView();
-            errorText.setError("");
-            errorText.setTextColor(Color.RED);//just to highlight that this is an error
-            errorText.setText("Select Vendor");//changes the selected item text to this
-            spinnerVendor.requestFocus();
-            return false;
-        }
-
-
-        if (spinnerVan.getSelectedItem() == "Select Van") {
-            TextView errorText = (TextView) spinnerVan.getSelectedView();
-            errorText.setError("");
-            errorText.setTextColor(Color.RED);//just to highlight that this is an error
-            errorText.setText("Select Van");//changes the selected item text to this
-            spinnerVan.requestFocus();
             return false;
         }
 
@@ -291,8 +261,8 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
                     postparams.put("comment", txtComment.getText());
                     postparams.put("endKm", txtEndKm.getText());
                     postparams.put("startKm", txtStartKm.getText());
-                    postparams.put("vendorName", spinnerVendor.getSelectedItem().toString());
-                    postparams.put("vanNumber", spinnerVan.getSelectedItem().toString());
+                    postparams.put("vendorName", txtVendor.getText());
+                    postparams.put("vanNumber",  txtVan.getText());
                     postparams.put("logDate", txtDate.getText());
                     postparams.put("mobileNumber", userObject.getMobileNumber());
 
@@ -315,7 +285,7 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
 
                 Date date = new Date(String.valueOf(attendanceObject.getDate()));
 
-                postparams.put("logDate", formatter.format(date));
+                postparams.put("logDate", Helper.formatter.format(date));
                 postparams.put("mobileNumber", userObject.getMobileNumber());
 
             } catch (JSONException e) {
@@ -345,95 +315,5 @@ public class AddAttendance extends AppCompatActivity implements AdapterView.OnIt
             }
         }
         return true;
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if (spinnerVan.getSelectedItem() != "Select Van") {
-            String item = parent.getItemAtPosition(position).toString();
-
-        }
-        if (spinnerVendor.getSelectedItem() != "Select Vendor") {
-            String item = parent.getItemAtPosition(position).toString();
-        }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
-
-    public void addItemsOnSpinnerVan(final List<String> vans) {
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
-        dataAdapter.add("Select Van");
-        dataAdapter.addAll(vans);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerVan.setAdapter(dataAdapter);
-    }
-
-    public void addItemsOnSpinnerShift(final List<String> vans) {
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
-        dataAdapter.add("Select Vendor");
-        dataAdapter.addAll(vans);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerVendor.setAdapter(dataAdapter);
-    }
-
-    private void loadVans(final List<String> vans, String JSON_URL, final String paramName) {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, JSON_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray heroArray = new JSONArray(response);
-                            if (heroArray.length() > 0) {
-                                for (int i = 0; i < heroArray.length(); i++) {
-                                    JSONObject heroObject = heroArray.getJSONObject(i);
-                                    vans.add(heroObject.getString(paramName));
-                                }
-                                addItemsOnSpinnerVan(vans);
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-        MySingleTon.getInstance(AddAttendance.this).addToRequestQue(stringRequest);
-
-    }
-
-    private void loadVendors(final List<String> vans, String JSON_URL, final String paramName) {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, JSON_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray heroArray = new JSONArray(response);
-                            if (heroArray.length() > 0) {
-                                for (int i = 0; i < heroArray.length(); i++) {
-                                    JSONObject heroObject = heroArray.getJSONObject(i);
-                                    vans.add(heroObject.getString(paramName));
-                                }
-                                addItemsOnSpinnerShift(vans);
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-        MySingleTon.getInstance(AddAttendance.this).addToRequestQue(stringRequest);
-
     }
 }

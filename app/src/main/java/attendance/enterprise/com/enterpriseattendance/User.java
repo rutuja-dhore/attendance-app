@@ -22,6 +22,8 @@ public class User implements Serializable {
 
     private String vanNumber;
 
+    private String vendor;
+
     public String getFirstName() {
         return firstName;
     }
@@ -78,7 +80,15 @@ public class User implements Serializable {
         this.vanNumber = vanNumber;
     }
 
-    public User(Long id, String firstName, String lastName, String password, String mobileNumber, Set<String> role,String vanNumber) {
+    public String getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
+
+    public User(Long id, String firstName, String lastName, String password, String mobileNumber, Set<String> role, String vanNumber, String vendor) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -86,5 +96,6 @@ public class User implements Serializable {
         this.mobileNumber = mobileNumber;
         this.role = role;
         this.vanNumber = vanNumber;
+        this.vendor = vendor;
     }
 }

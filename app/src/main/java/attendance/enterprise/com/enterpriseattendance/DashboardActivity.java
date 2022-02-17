@@ -23,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
@@ -42,13 +43,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         User userObject = (User) getIntent().getSerializableExtra("user");
 
         if (userObject == null) {
-            userObject = new User(sp.getLong("id", 0),
-                    sp.getString("firstName", ""),
-                    sp.getString("lastName", ""),
-                    sp.getString("password", ""),
-                    sp.getString("mobileNumber", ""),
-                    sp.getStringSet("roles", new HashSet<String>()),
-                    sp.getString("vanNumber", ""));
+            userObject = Helper.getUserObject(sp);
         }
         Button buttonVan = (Button) findViewById(R.id.buttonVan);
 
@@ -105,30 +100,19 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
+
     @Override
     public void onClick(View v) {
         if (v == buttonAttendance) {
             Intent i = new Intent(getApplicationContext(), AttendanceActivity.class);
-            userObject = new User(sp.getLong("id", 0),
-                    sp.getString("firstName", ""),
-                    sp.getString("lastName", ""),
-                    sp.getString("password", ""),
-                    sp.getString("mobileNumber", ""),
-                    sp.getStringSet("roles", new HashSet<String>()),
-                    sp.getString("vanNumber", ""));
+            userObject = Helper.getUserObject(sp);
 
             i.putExtra("user", userObject);
             startActivity(i);
         }
         else  if (v == buttonFuel) {
             Intent i = new Intent(getApplicationContext(), FuelActivity.class);
-            userObject = new User(sp.getLong("id", 0),
-                    sp.getString("firstName", ""),
-                    sp.getString("lastName", ""),
-                    sp.getString("password", ""),
-                    sp.getString("mobileNumber", ""),
-                    sp.getStringSet("roles", new HashSet<String>()),
-                    sp.getString("vanNumber", ""));
+            userObject = Helper.getUserObject(sp);
 
             i.putExtra("user", userObject);
             startActivity(i);

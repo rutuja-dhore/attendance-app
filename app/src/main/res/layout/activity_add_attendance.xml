@@ -116,20 +116,23 @@
                         android:hint="Select Date" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <Spinner
-                    android:id="@+id/spinnerShift"
+                <EditText
+                    android:id="@+id/editTextVendor"
                     android:layout_width="match_parent"
-                    android:layout_height="41dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="Vendor"
+                    android:imeActionId="6"
+                    android:singleLine="true" />
 
-                    tools:spinnerMode="dialog" />
-
-                <Spinner
-                    android:id="@+id/spinnerVan"
+                <EditText
+                    android:id="@+id/editTextVan"
                     android:layout_width="match_parent"
-                    android:layout_height="53dp"
-                    android:layout_weight="1"
-
-                    android:spinnerMode="dialog" />
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="Van"
+                    android:imeActionId="6"
+                    android:singleLine="true" />
 
                 <com.google.android.material.textfield.TextInputLayout
 
@@ -255,13 +258,14 @@
                     android:layout_height="wrap_content"
                     android:textColorHint="?attr/colorAccent">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/spinnerShift1"
+                    <EditText
+                        android:id="@+id/editTextVendor1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
                         android:hint="Vendor"
-                        android:inputType="text" />
+                        android:imeActionId="6"
+                        android:singleLine="true" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -270,13 +274,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/spinnerVan1"
+                    <EditText
+                        android:id="@+id/editTextVan1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
-                        android:hint="Van Number"
-                        android:inputType="text" />
+                        android:hint="Van"
+                        android:imeActionId="6"
+                        android:singleLine="true" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 

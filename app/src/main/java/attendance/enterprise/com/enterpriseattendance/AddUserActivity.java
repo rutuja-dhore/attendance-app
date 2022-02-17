@@ -64,6 +64,7 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
         final EditText mEditMobileNumber1 = findViewById(R.id.editTextMobileNumber1);
         final EditText mEditPassword1 = findViewById(R.id.editTextPassowrd1);
         final EditText mEditVan = findViewById(R.id.editTextVan);
+        final EditText editTextVendor = findViewById(R.id.editTextVendor);
 
         spinnerVendor = (Spinner) findViewById(R.id.spinnerVendor);
         List<String> vendors = new ArrayList<String>();
@@ -137,6 +138,11 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
             mEditMobileNumber1.setText(userObject.getMobileNumber());
             mEditPassword1.setText(userObject.getPassword());
             mEditVan.setText(userObject.getVanNumber());
+            editTextVendor.setText(userObject.getVendor());
+
+            //            ArrayAdapter<String> array_spinner=(ArrayAdapter<String>)spinnerVan.getAdapter();
+//            spinnerVan.setSelection(array_spinner.getPosition(attendanceObject.getVan().getNumber()));
+
 
             ActionBar actionBar = getSupportActionBar(); // or getActionBar();
             getSupportActionBar().setTitle("User Details"); // set the top title

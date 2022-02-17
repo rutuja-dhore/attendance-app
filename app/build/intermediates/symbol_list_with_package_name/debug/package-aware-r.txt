@@ -1567,7 +1567,9 @@ id editTextStartKm1
 id editTextType
 id editTextType1
 id editTextVan
+id editTextVan1
 id editTextVendor
+id editTextVendor1
 id editVanNumber
 id edit_query
 id email
@@ -1718,8 +1720,6 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
-id spinnerShift
-id spinnerShift1
 id spinnerVan
 id spinnerVan1
 id spinnerVendor

@@ -60,8 +60,6 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
 
     EditText fromDate, toDate;
 
-    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
     ProgressBar progressBar;
 
     private static final String attendanceDomain = "http://34.93.190.224:8080/trips";
@@ -131,8 +129,8 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
             buttonExport.setVisibility(View.INVISIBLE);
             loadVans(attendanceDomain + "/" + userObject.getMobileNumber());
         } else {
-            fromDate.setText(formatter.format(new Date()));
-            toDate.setText(formatter.format(new Date()));
+            fromDate.setText(Helper.formatter.format(Helper.getFirstDateOfMonth(new Date())));
+            toDate.setText(Helper.formatter.format(new Date()));
             cardViewAdmin.setVisibility(View.VISIBLE);
             buttonAdd.setVisibility(View.INVISIBLE);
         }
@@ -264,6 +262,7 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
     }
+
 
 
     private boolean inputValidated() {

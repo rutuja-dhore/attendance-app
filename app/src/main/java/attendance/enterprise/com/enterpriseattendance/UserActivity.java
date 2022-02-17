@@ -109,9 +109,21 @@ public class UserActivity extends AppCompatActivity {
                                         JSONObject vanObject = heroObject.getJSONObject("van");
                                         vanNumber = vanObject.getString("number");
                                     }
+
+
+                                    Set<String> vendors = new HashSet<>();
+                                    String vendor = null;
+                                    if (heroObject.has("vendors") &&  !heroObject.isNull("vendors")) {
+                                        JSONArray vendorsArray = heroObject.getJSONArray("vendors");
+                                        for (int t = 0; t <1; t++) {
+                                            JSONObject vendorObject = vendorsArray.getJSONObject(t);
+                                            vendor = vendorObject .getString("name");
+                                        }
+                                    }
+
                                     //creating a van object and giving them the values from json object
                                     User van = new User(heroObject.getLong("id"), heroObject.getString("firstName"), heroObject.getString("lastName"),
-                                            heroObject.getString("password"), heroObject.getString("mobileNumber"), roles, vanNumber);
+                                            heroObject.getString("password"), heroObject.getString("mobileNumber"), roles, vanNumber,vendor);
 
                                     //adding the van to herolist
                                     herolist.add(van);

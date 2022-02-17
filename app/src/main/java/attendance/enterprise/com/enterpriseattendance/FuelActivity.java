@@ -52,8 +52,6 @@ public class FuelActivity extends AppCompatActivity implements View.OnClickListe
 
     EditText fromDate, toDate;
 
-    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
     ProgressBar progressBar;
 
     private static final String fuelDomain = "http://34.93.190.224:8080/fuel";
@@ -123,8 +121,8 @@ public class FuelActivity extends AppCompatActivity implements View.OnClickListe
             buttonExport.setVisibility(View.INVISIBLE);
             loadVans(fuelDomain + "/" + userObject.getVanNumber());
         } else {
-            fromDate.setText(formatter.format(new Date()));
-            toDate.setText(formatter.format(new Date()));
+            fromDate.setText(Helper.formatter.format(Helper.getFirstDateOfMonth(new Date())));
+            toDate.setText(Helper.formatter.format(new Date()));
             cardViewAdmin.setVisibility(View.VISIBLE);
             buttonAdd.setVisibility(View.INVISIBLE);
         }
@@ -367,6 +365,7 @@ public class FuelActivity extends AppCompatActivity implements View.OnClickListe
                                         id = heroObject.getInt("id");
                                     }
 
+//                                    "2022-02-15T00:00:00.000+00:00"
                                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                                     Date objDate = dateFormat.parse(heroObject.getString("logDate"));
