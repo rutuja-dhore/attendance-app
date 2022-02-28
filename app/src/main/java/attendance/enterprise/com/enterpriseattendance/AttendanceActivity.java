@@ -6,10 +6,13 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.os.Environment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -37,6 +40,11 @@ import org.json.JSONObject;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.ParseException;
@@ -46,6 +54,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+
+
 
 
 public class AttendanceActivity extends AppCompatActivity implements View.OnClickListener {
@@ -64,7 +74,9 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
 
     private static final String attendanceDomain = "http://34.93.190.224:8080/trips";
 
-    private static final String exportDomain = "http://34.93.190.224:8080/trips/downloadTemplate";
+    private static final String exportDomain = "http://34.93.190.224:8080/trips/export";
+
+    boolean download = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,7 +170,24 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
             public void onClick(View arg0) {
                 progressBar.setVisibility(View.VISIBLE);
 
-   export(exportDomain);
+                //creating a string request to send request to the url
+                StringRequest stringRequest = new StringRequest(Request.Method.GET, exportDomain,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                progressBar.setVisibility(View.INVISIBLE);
+
+                                Toast.makeText(getApplicationContext(), "Email Sent", Toast.LENGTH_SHORT).show();
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                //displaying the error in toast if occurrs
+                                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
             }
         });
 
@@ -346,44 +375,4 @@ public class AttendanceActivity extends AppCompatActivity implements View.OnClic
         MySingleTon.getInstance(AttendanceActivity.this).addToRequestQue(stringRequest);
 
     }
-
-
-    private void export(String url) {
-
-        herolist = new ArrayList<>();
-
-        //getting the progressbar
-
-        //making the progressbar visible
-        progressBar.setVisibility(View.VISIBLE);
-
-        //creating a string request to send request to the url
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        //hiding the progressbar after completion
-                        progressBar.setVisibility(View.INVISIBLE);
-
-                       try  {
-                           Toast.makeText(getApplicationContext(), "Downloaded", Toast.LENGTH_SHORT).show();
-
-
-                       } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //displaying the error in toast if occurrs
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-        MySingleTon.getInstance(AttendanceActivity.this).addToRequestQue(stringRequest);
-
-    }
-
 }

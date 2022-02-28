@@ -51,7 +51,7 @@
 23-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:18:22-85
 24
 25    <application
-25-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:20:5-70:19
+25-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:20:5-71:19
 26        android:allowBackup="true"
 26-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:21:9-35
 27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -61,98 +61,100 @@
 29-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:22:9-43
 30        android:label="@string/app_name"
 30-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:23:9-41
-31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:24:9-54
-32        android:supportsRtl="true"
-32-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:25:9-35
-33        android:testOnly="true"
-34        android:theme="@style/AppTheme"
-34-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:26:9-40
-35        android:usesCleartextTraffic="true" >
-35-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:27:9-44
-36        <activity
-36-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:28:9-36:20
-37            android:name="attendance.enterprise.com.enterpriseattendance.LoginActivity"
-37-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:29:13-42
-38            android:label="Attendance" >
-38-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:30:13-39
-39            <intent-filter>
-39-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:31:13-35:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:32:17-69
-40-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:32:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:34:17-77
-42-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:34:27-74
-43            </intent-filter>
-44        </activity>
-45        <activity
-45-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:37:9-39:39
-46            android:name="attendance.enterprise.com.enterpriseattendance.UserActivity"
-46-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:38:13-41
-47            android:label="Drivers" />
-47-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:39:13-36
-48        <activity
-48-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:40:9-42:36
-49            android:name="attendance.enterprise.com.enterpriseattendance.VanActivity"
-49-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:41:13-40
-50            android:label="Vans" />
-50-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:42:13-33
-51        <activity
-51-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:43:9-45:39
-52            android:name="attendance.enterprise.com.enterpriseattendance.AddVanActivity"
-52-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:44:13-43
-53            android:label="Add Van" />
-53-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:45:13-36
-54        <activity
-54-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:46:9-48:42
-55            android:name="attendance.enterprise.com.enterpriseattendance.AddShiftActivity"
-55-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:47:13-45
-56            android:label="Add Vendor" />
-56-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:48:13-39
-57        <activity
-57-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:49:9-51:42
-58            android:name="attendance.enterprise.com.enterpriseattendance.AddUserActivity"
-58-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:50:13-44
-59            android:label="Add Driver" />
-59-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:51:13-39
-60        <activity
-60-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:52:9-54:39
-61            android:name="attendance.enterprise.com.enterpriseattendance.ShiftActivity"
-61-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:53:13-42
-62            android:label="Vendors" />
-62-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:54:13-36
-63        <activity
-63-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:55:9-57:41
-64            android:name="attendance.enterprise.com.enterpriseattendance.DashboardActivity"
-64-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:56:13-46
-65            android:label="Dashboard" />
-65-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:57:13-38
-66        <activity
-66-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:58:9-60:41
-67            android:name="attendance.enterprise.com.enterpriseattendance.AttendanceActivity"
-67-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:59:13-47
-68            android:label="Trip Logs" />
-68-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:60:13-38
-69        <activity
-69-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:61:9-63:40
-70            android:name="attendance.enterprise.com.enterpriseattendance.AddAttendance"
-70-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:62:13-42
-71            android:label="Add Trip" />
-71-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:63:13-37
-72        <activity
-72-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:64:9-66:40
-73            android:name="attendance.enterprise.com.enterpriseattendance.AddFuelActivity"
-73-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:65:13-44
-74            android:label="Add Fuel" />
-74-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:66:13-37
-75        <activity
-75-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:67:9-69:36
-76            android:name="attendance.enterprise.com.enterpriseattendance.FuelActivity"
-76-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:68:13-41
-77            android:label="Fuel" />
-77-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:69:13-33
-78    </application>
-79
-80</manifest>
+31        android:requestLegacyExternalStorage="true"
+31-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:28:9-52
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:24:9-54
+33        android:supportsRtl="true"
+33-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:25:9-35
+34        android:testOnly="true"
+35        android:theme="@style/AppTheme"
+35-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:26:9-40
+36        android:usesCleartextTraffic="true" >
+36-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:27:9-44
+37        <activity
+37-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:29:9-37:20
+38            android:name="attendance.enterprise.com.enterpriseattendance.LoginActivity"
+38-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:30:13-42
+39            android:label="Attendance" >
+39-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:31:13-39
+40            <intent-filter>
+40-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:32:13-36:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:33:17-69
+41-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:33:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:35:17-77
+43-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:35:27-74
+44            </intent-filter>
+45        </activity>
+46        <activity
+46-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:38:9-40:39
+47            android:name="attendance.enterprise.com.enterpriseattendance.UserActivity"
+47-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:39:13-41
+48            android:label="Drivers" />
+48-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:40:13-36
+49        <activity
+49-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:41:9-43:36
+50            android:name="attendance.enterprise.com.enterpriseattendance.VanActivity"
+50-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:42:13-40
+51            android:label="Vans" />
+51-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:43:13-33
+52        <activity
+52-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:44:9-46:39
+53            android:name="attendance.enterprise.com.enterpriseattendance.AddVanActivity"
+53-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:45:13-43
+54            android:label="Add Van" />
+54-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:46:13-36
+55        <activity
+55-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:47:9-49:42
+56            android:name="attendance.enterprise.com.enterpriseattendance.AddShiftActivity"
+56-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:48:13-45
+57            android:label="Add Vendor" />
+57-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:49:13-39
+58        <activity
+58-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:50:9-52:42
+59            android:name="attendance.enterprise.com.enterpriseattendance.AddUserActivity"
+59-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:51:13-44
+60            android:label="Add Driver" />
+60-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:52:13-39
+61        <activity
+61-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:53:9-55:39
+62            android:name="attendance.enterprise.com.enterpriseattendance.ShiftActivity"
+62-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:54:13-42
+63            android:label="Vendors" />
+63-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:55:13-36
+64        <activity
+64-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:56:9-58:41
+65            android:name="attendance.enterprise.com.enterpriseattendance.DashboardActivity"
+65-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:57:13-46
+66            android:label="Dashboard" />
+66-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:58:13-38
+67        <activity
+67-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:59:9-61:41
+68            android:name="attendance.enterprise.com.enterpriseattendance.AttendanceActivity"
+68-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:60:13-47
+69            android:label="Trip Logs" />
+69-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:61:13-38
+70        <activity
+70-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:62:9-64:40
+71            android:name="attendance.enterprise.com.enterpriseattendance.AddAttendance"
+71-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:63:13-42
+72            android:label="Add Trip" />
+72-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:64:13-37
+73        <activity
+73-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:65:9-67:40
+74            android:name="attendance.enterprise.com.enterpriseattendance.AddFuelActivity"
+74-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:66:13-44
+75            android:label="Add Fuel" />
+75-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:67:13-37
+76        <activity
+76-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:68:9-70:36
+77            android:name="attendance.enterprise.com.enterpriseattendance.FuelActivity"
+77-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:69:13-41
+78            android:label="Fuel" />
+78-->/Users/rutuja.dhore/Downloads/attejndance/EnterpriseAttendance/app/src/main/AndroidManifest.xml:70:13-33
+79    </application>
+80
+81</manifest>

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -44,6 +46,7 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
     EditText txtFirstName1, txtDate1, txtStartKm1, txtEndKm1, txtTotalKm1, txtComment1, txtVan1, txtVendor1;
     User userObject = null;
 
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
 
     @Override
@@ -90,8 +93,8 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
             cardAdd.setVisibility(View.INVISIBLE);
             cardDetails.setVisibility(View.VISIBLE);
             cardEdit.setVisibility(View.INVISIBLE);
-
-            txtDate1.setText(Helper.formatter.format(attendanceObject.getDate()));
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            txtDate1.setText(formatter.format(attendanceObject.getDate()));
             txtStartKm1.setText(String.valueOf(attendanceObject.getStartKm()));
             txtEndKm1.setText(String.valueOf(attendanceObject.getEndKm()));
             txtTotalKm1.setText(String.valueOf(attendanceObject.getTotalKm()));
@@ -100,7 +103,7 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
             txtComment1.setText(attendanceObject.getComment());
             txtFirstName1.setText(attendanceObject.getFirstName());
 
-            txtDate.setText(Helper.formatter.format(attendanceObject.getDate()));
+            txtDate.setText(formatter.format(attendanceObject.getDate()));
             txtStartKm.setText(String.valueOf(attendanceObject.getStartKm()));
             txtEndKm.setText(String.valueOf(attendanceObject.getEndKm()));
 
@@ -111,7 +114,7 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
             cardAdd.setVisibility(View.VISIBLE);
             cardDetails.setVisibility(View.INVISIBLE);
             cardEdit.setVisibility(View.INVISIBLE);
-            txtDate.setText(Helper.formatter.format(new Date()));
+            txtDate.setText(formatter.format(new Date()));
             txtVendor.setText(userObject.getVendor());
             txtVan.setText(userObject.getVanNumber());
         }
@@ -198,8 +201,20 @@ public class AddAttendance extends AppCompatActivity implements View.OnClickList
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
-                        }
+                            if (error == null || error.networkResponse == null) {
+                                return;
+                            }
+
+                            String body;
+                            //get status code here
+                            final String statusCode = String.valueOf(error.networkResponse.statusCode);
+                            //get response body and parse with appropriate encoding
+                            try {
+                                body = new String(error.networkResponse.data,"UTF-8");
+                            } catch (Exception e) {
+                                // exception
+                                Log.e("Add trip", "onErrorResponse: ", e);
+                            }                        }
                     });
 
             MySingleTon.getInstance(AddAttendance.this).addToRequestQue(jsonObjReq);
